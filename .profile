@@ -1,5 +1,13 @@
 # vim:set syntax=sh:
 
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
+fi
+
 # Hard drives and memory are cheap. Keep 10,000 lines of history and
 export HISTSIZE=10000
 # don't limit the size of the history file.
@@ -72,5 +80,5 @@ fi
 
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
-# Ruby env 
+# Ruby env
 test `which rbexnv` && eval "$(rbenv init -)"
