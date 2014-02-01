@@ -74,8 +74,6 @@ alias gb='git diff --word-diff'
 export PIP_DOWNLOAD_CACHE=~/.pip-download-cache
 
 # Python Virtual Environments
-export PATH="/usr/local/heroku/bin:$PATH"
-
 if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
 export WORKON_HOME=~/.virtualenvs
 . /usr/local/bin/virtualenvwrapper.sh
@@ -109,6 +107,3 @@ function commit_link(){
 }
 
 test -f ~/.extra_profile && source ~/.extra_profile
-
-
-
