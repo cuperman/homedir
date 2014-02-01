@@ -19,6 +19,8 @@ set statusline+=%*
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_echo_current_error=1
+let g:syntastic_python_checkers=['pyflakes','pylint','python']
+
 
 " Syntax checker installations...
 " sudo apt-get install pyflakes
@@ -76,6 +78,9 @@ set scrolloff=5
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+""" Additional syntaxes
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
 " Working with split screen nicely
 " Resize Split When the window is resized
