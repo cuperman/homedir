@@ -1,66 +1,76 @@
 {
-    "maxerr"        : 100,
-
-    "browser"       : true,
-
-    "node"          : true,
-    "rhino"         : false,
-    "couch"         : false,
-    "wsh"           : false,
-
-    "jquery"        : true,
-    "prototypejs"   : false,
-    "mootools"      : false,
-    "dojo"          : false,
-
-    "predef"        : [
-        "escape",
-
-        "grunt",
-        "Pilotfish",
-        "QUnit"
-    ],
-
-
-    "debug"         : false,
-    "devel"         : false,
-
-    "es5"           : false,
-    "strict"        : false,
-    "globalstrict"  : false,
-
-    "asi"           : false,
-    "laxbreak"      : true,
+    // Enforcing options
+    // When set to true, these options will make JSHint produce more warnings about your code.
     "bitwise"       : true,
-    "boss"          : true,
+    "camelcase"     : false,
     "curly"         : true,
-    "eqeqeq"        : false,
-    "eqnull"        : false,
-    "evil"          : false,
-    "expr"          : true,
-    "forin"         : false,
+    "eqeqeq"        : true,
+    "es3"           : false,
+    "forin"         : true,
+    "freeze"        : true,
     "immed"         : true,
-    "latedef"       : false,
-    "loopfunc"      : true,
+    "indent"        : 4,
+    "latedef"       : true,
+    "newcap"        : true,
     "noarg"         : true,
-    "regexp"        : true,
-    "regexdash"     : false,
-    "scripturl"     : true,
-    "shadow"        : false,
-    "supernew"      : false,
+    "noempty"       : true,
+    "nonbsp"        : true,
+    "nonew"         : false,
+    "plusplus"      : false,
+    "quotmark"      : false,
     "undef"         : true,
     "unused"        : true,
-
-    "newcap"        : false,
-    "noempty"       : true,
-    "nonew"         : true,
-    "nomen"         : false,
-    "onevar"        : false,
-    "plusplus"      : false,
-    "sub"           : false,
+    "strict"        : true,
     "trailing"      : true,
-    "indent"        : 4,
     "maxstatements" : 25,
     "maxcomplexity" : 8,
-    "maxlen"        : 160
+    "maxlen"        : 160,
+
+    // Relaxing options
+    // When set to true, these options will make JSHint produce less warnings about your code.
+    "asi"           : false,
+    "boss"          : true,
+    "debug"         : false,
+    "eqnull"        : false,
+    "esnext"        : false,
+    "evil"          : false,
+    "expr"          : false,
+    "funcscope"     : false,
+    "gcl"           : false,
+    "globalstrict"  : false,
+    "iterator"      : false,
+
+    "lastsemic"     : false,
+    "laxbreak"      : false,
+    "laxcomma"      : false,
+    "loopfunc"      : false,
+    "maxerr"        : 50,
+    "moz"           : false,
+    "multistr"      : false,
+    "notypeof"      : false,
+    "proto"         : false,
+    "scripturl"     : false,
+    "smarttabs"     : false,
+    "shadow"        : false,
+    "sub"           : false,
+    "supernew"      : false,
+    "validthis"     : false,
+    "noyield"       : false,
+
+    // Environments
+    // These options let JSHint know about some pre-defined global variables.
+    "browser"       : true,
+    "couch"         : false,
+    "devel"         : false,
+    "dojo"          : false,
+    "jquery"        : true,
+    "mootools"      : false,
+    "node"          : false,
+    "nonstandard"   : false,
+    "phantom"       : false,
+    "prototypejs"   : false,
+    "rhino"         : false,
+    "worker"        : false,
+    "wsh"           : false,
+    "yui"           : false
 }
