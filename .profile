@@ -72,19 +72,18 @@ export PIP_DOWNLOAD_CACHE=~/.pip-download-cache
 
 test -f ~/.extra_profile && source ~/.extra_profile
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
+# Python Virtual Environments
 if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
-# Virtual env wrapper for python
 export WORKON_HOME=~/.virtualenvs
 . /usr/local/bin/virtualenvwrapper.sh
 fi
 
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+# Node Version Manager
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
 
-# Ruby env
-test `which rbexnv` && eval "$(rbenv init -)"
-
-# Added RVM bin to PATH
+# Ruby Version Manager
+[[ -s $HOME/.rvm/scripts/rvm ]] && . $HOME/.rvm/scripts/rvm
 PATH=$PATH:$HOME/.rvm/bin
+
+# Heroku Toolbelt
+export PATH=$PATH:/usr/local/heroku/bin
