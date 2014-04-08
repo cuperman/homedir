@@ -58,3 +58,4 @@ function bashprompt() {
 
 PROMPT_COMMAND=bashprompt
 
+PROMPT_COMMAND="update_terminal_cwd; bashprompt"
