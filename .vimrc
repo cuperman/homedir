@@ -48,6 +48,7 @@ set bg=dark
 "http://ethanschoonover.com/solarized
 set t_Co=256
 let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 colorscheme solarized
 
 """ Settings for tab auto completion of files
