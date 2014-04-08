@@ -61,9 +61,6 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export CLICOLOR=1
 
 # some useful git aliases
-alias gg='git log --oneline --abbrev-commit --all --graph --decorate --color'
-alias gw='git diff --color-words'
-alias gb='git diff --word-diff'
 
 export PIP_DOWNLOAD_CACHE=~/.pip-download-cache
 
@@ -82,3 +79,6 @@ fi
 
 # Ruby env
 test `which rbexnv` && eval "$(rbenv init -)"
+
+# Added RVM bin to PATH
+PATH=$PATH:$HOME/.rvm/bin
