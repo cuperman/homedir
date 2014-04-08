@@ -71,15 +71,12 @@ alias gb='git diff --word-diff'
 # load other aliases
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
-# load other aliases
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
-
 export PIP_DOWNLOAD_CACHE=~/.pip-download-cache
 
 # Python Virtual Environments
 if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
-export WORKON_HOME=~/.virtualenvs
-. /usr/local/bin/virtualenvwrapper.sh
+    export WORKON_HOME=~/.virtualenvs
+    . /usr/local/bin/virtualenvwrapper.sh
 fi
 
 # Node Version Manager
@@ -92,9 +89,6 @@ PATH=$PATH:$HOME/.rvm/bin
 
 # Heroku Toolbelt
 export PATH=$PATH:/usr/local/heroku/bin
-
-# Added RVM bin to PATH
-PATH=$PATH:$HOME/.rvm/bin
 
 function commit_link(){
     # hash
