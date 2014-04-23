@@ -52,7 +52,7 @@ function bashprompt() {
     else
         git=" on $(parse_git_status)"
     fi
-    PS1="$username\h:\w${git}\$ "
+    PS1="$username\h:\W${git}\$ "
 }
 
 
