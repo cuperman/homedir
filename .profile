@@ -70,9 +70,9 @@ alias gb='git diff --word-diff'
 
 export PIP_DOWNLOAD_CACHE=~/.pip-download-cache
 
-test -f ~/.extra_profile && source ~/.extra_profile
-
 # Python Virtual Environments
+export PATH="/usr/local/heroku/bin:$PATH"
+
 if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
 export WORKON_HOME=~/.virtualenvs
 . /usr/local/bin/virtualenvwrapper.sh
@@ -80,7 +80,7 @@ fi
 
 # Node Version Manager
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
-[[ -s /usr/local/opt/nvm/nvm.sh ]] && . /usr/local/opt/nvm/nvm.sh # This loads NVM from brew
+[[ -d $(brew --prefix nvm) ]] && . $(brew --prefix nvm)/nvm.sh # This loads NVM, from brew
 
 # Ruby Version Manager
 [[ -s $HOME/.rvm/scripts/rvm ]] && . $HOME/.rvm/scripts/rvm
@@ -88,3 +88,5 @@ PATH=$PATH:$HOME/.rvm/bin
 
 # Heroku Toolbelt
 export PATH=$PATH:/usr/local/heroku/bin
+
+test -f ~/.extra_profile && source ~/.extra_profile
