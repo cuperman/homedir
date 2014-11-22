@@ -92,4 +92,23 @@ PATH=$PATH:$HOME/.rvm/bin
 # Heroku Toolbelt
 export PATH=$PATH:/usr/local/heroku/bin
 
+function commit_link(){
+    # hash
+    if [ "$1" == "" ] ; then
+        hash=`git log -n 1 --format="%H"`
+    else
+        hash=$1
+    fi
+
+    # repo owner/name
+    repo=`git remote -v | grep github.com | head -1 | awk -F ':' '{print $2}' | perl -p -e 's/\.git.+//'`
+    url="https://github.com/$repo/commit/$hash"
+    echo $url
+    open $url
+
+}
+
 test -f ~/.extra_profile && source ~/.extra_profile
+
+
+
