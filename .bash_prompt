@@ -58,7 +58,4 @@ function bashprompt() {
     PS1="$username\h:\W${git}\$ "
 }
 
-
-PROMPT_COMMAND=bashprompt
-
 PROMPT_COMMAND="update_terminal_cwd; bashprompt"
