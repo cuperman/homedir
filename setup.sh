@@ -28,7 +28,7 @@ set +e
 
 echo "Installing TextMate Bundles"
 my_bundle_dir=`pwd`/homedir/TextMate/Bundles
-textmate_bundle_dir=~/Library/Application\ Support/Avian/Bundles
+textmate_bundle_dir=~/Library/Application\ Support/TextMate/Bundles
 mkdir -p "$textmate_bundle_dir"
 for bundle in `ls "$my_bundle_dir" | grep \.tmbundle$`; do
   ln -s "$my_bundle_dir/$bundle" "$textmate_bundle_dir/$bundle"
