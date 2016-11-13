@@ -15,7 +15,7 @@ for file in .vimrc .vim .selected_editor .profile .hushlogin .jshintrc .inputrc 
     echo "Symlink for $file is already there"
     continue
   fi
-  if [ -d $file -o -f $file ] ; then 
+  if [ -d $file -o -f $file ] ; then
     echo "Backing up existing $file to $file.b4homedir"
     rm -rf $file.b4homedir
     mv $file $file.b4homedir
@@ -25,6 +25,15 @@ for file in .vimrc .vim .selected_editor .profile .hushlogin .jshintrc .inputrc 
 done
 
 set +e
+
+echo "Installing TextMate Bundles"
+my_bundle_dir=`pwd`/homedir/TextMate/Bundles
+textmate_bundle_dir=~/Library/Application\ Support/Avian/Bundles
+mkdir -p "$textmate_bundle_dir"
+for bundle in `ls "$my_bundle_dir" | grep \.tmbundle$`; do
+  ln -s "$my_bundle_dir/$bundle" "$textmate_bundle_dir/$bundle"
+done
+echo Done
 
 function checkExe(){
     loc=`which $1`
