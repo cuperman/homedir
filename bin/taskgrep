@@ -1,0 +1,3 @@
+#!/bin/bash
+
+egrep --only-matching "(EPIC|PRB|STRY)\w*" | sort | uniq
