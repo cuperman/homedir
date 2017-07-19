@@ -31,7 +31,12 @@ my_bundle_dir=`pwd`/homedir/TextMate/Bundles
 textmate_bundle_dir=~/Library/Application\ Support/TextMate/Bundles
 mkdir -p "$textmate_bundle_dir"
 for bundle in `ls "$my_bundle_dir" | grep \.tmbundle$`; do
-  ln -s "$my_bundle_dir/$bundle" "$textmate_bundle_dir/$bundle"
+  if [ -d "$textmate_bundle_dir/$bundle" ]; then
+    echo "Bundle $bundle is already installed"
+  else
+    echo "Installing $bundle"
+    ln -s "$my_bundle_dir/$bundle" "$textmate_bundle_dir/$bundle"
+  fi
 done
 echo Done
 
