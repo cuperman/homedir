@@ -106,7 +106,9 @@ function commit_link(){
 
 }
 
+# Load system specific settings
 test -f ~/.extra_profile && source ~/.extra_profile
 
+# ServiceNow stuff
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-
+export MAVEN_OPTS="-Xmx2048M -Xss128M"
