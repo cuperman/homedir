@@ -80,8 +80,7 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
 fi
 
 # Node Version Manager
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
-[[ -d $(brew --prefix nvm) ]] && . $(brew --prefix nvm)/nvm.sh # This loads NVM, from brew
+export NVM_DIR="$HOME/.nvm" && . "/usr/local/opt/nvm/nvm.sh"
 
 # Ruby Version Manager
 [[ -s $HOME/.rvm/scripts/rvm ]] && . $HOME/.rvm/scripts/rvm
