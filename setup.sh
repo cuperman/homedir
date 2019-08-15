@@ -9,7 +9,7 @@ set -e
 touch ~/.bash_sessions_disable
 
 cd ~
-for file in .vimrc .vim .selected_editor .profile .hushlogin .eslintrc.js .inputrc .bash_aliases .gemrc ; do
+for file in .vimrc .vim .selected_editor .profile .hushlogin .eslintrc.js .gitignore .inputrc .bash_aliases .gemrc; do
   if [ -h $file ] ; then
     # File is already a symbolic link
     echo "Symlink for $file is already there"
@@ -50,11 +50,11 @@ function checkExe(){
     fi
 }
 echo "Checking for programs required for syntax checking (handy for vim syntastic)"
-checkExe eslint "sudo npm install eslint -g"
+checkExe eslint "npm install eslint -g"
 checkExe pyflakes "sudo apt-get install pyflakes"
 checkExe xmllint "sudo apt-get install libxml2-utils"
 checkExe tidy "sudo apt-get install tidy"
-checkExe csslint "sudo npm install csslint -g"
-checkExe js-yaml "sudo npm install js-yaml -g"
+checkExe csslint "npm install csslint -g"
+checkExe js-yaml "npm install js-yaml -g"
 
 echo Done

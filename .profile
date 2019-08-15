@@ -1,13 +1,4 @@
 # vim:set syntax=sh:
-
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-        . "$HOME/.bashrc"
-    fi
-fi
-
 # Hard drives and memory are cheap. Keep 10,000 lines of history and
 export HISTSIZE=10000
 # don't limit the size of the history file.
@@ -28,7 +19,7 @@ function updateHistory() {
     # The thought here is that a server that doesn't get much traffic should not be pruned
     # But a server that gets a lot of traffic (such as a laptop) should be pruned more often
     NUM_FILES=`ls -1 $bash_hist | wc -l`
-    if [ "$NUM_FILES" -gt "500" ]; then
+    if [ "$NUM_FILES" -gt "500" ]; then 
         MAX_DAYS=30
     elif [ "$NUM_FILES" -gt "50" ]; then
         MAX_DAYS=180
@@ -53,9 +44,6 @@ updateHistory &
 export SVN_EDITOR=`which vim`
 export EDITOR=`which vim`
 
-# Auto update
-~/homedir/update.sh
-
 ## Bash prompt
 source ~/homedir/.bash_prompt
 
@@ -73,6 +61,9 @@ alias gb='git diff --word-diff'
 
 export PIP_DOWNLOAD_CACHE=~/.pip-download-cache
 
+
+export PATH="/usr/local/heroku/bin:$PATH"
+
 # Python Virtual Environments
 if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
     export WORKON_HOME=~/.virtualenvs
@@ -81,14 +72,17 @@ fi
 
 # Node Version Manager
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
-[[ -d $(brew --prefix nvm) ]] && . $(brew --prefix nvm)/nvm.sh # This loads NVM, from brew
+[[ -s /usr/local/opt/nvm/nvm.sh ]] && . /usr/local/opt/nvm/nvm.sh # This loads NVM from brew
 
 # Ruby Version Manager
 [[ -s $HOME/.rvm/scripts/rvm ]] && . $HOME/.rvm/scripts/rvm
 PATH=$PATH:$HOME/.rvm/bin
 
-# Heroku Toolbelt
-export PATH=$PATH:/usr/local/heroku/bin
+# Java env
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+# Ruby env 
+test `which rbexnv` && eval "$(rbenv init -)"
 
 function commit_link(){
     # hash
@@ -108,5 +102,5 @@ function commit_link(){
 
 test -f ~/.extra_profile && source ~/.extra_profile
 
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
 
