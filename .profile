@@ -74,10 +74,10 @@ alias gb='git diff --word-diff'
 export PIP_DOWNLOAD_CACHE=~/.pip-download-cache
 
 # Python Virtual Environments
-if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
-    export WORKON_HOME=~/.virtualenvs
-    . /usr/local/bin/virtualenvwrapper.sh
-fi
+# if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then
+#     export WORKON_HOME=~/.virtualenvs
+#     . /usr/local/bin/virtualenvwrapper.sh
+# fi
 
 # Node Version Manager
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
@@ -108,5 +108,9 @@ function commit_link(){
 
 test -f ~/.extra_profile && source ~/.extra_profile
 
+export PATH="/usr/local/sbin:$PATH"
+
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
+# Add python3/pip3 installed packages
+export PATH="~/Library/Python/3.7/bin:$PATH"
